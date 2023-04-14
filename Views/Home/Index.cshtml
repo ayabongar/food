@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    // this will need to be fetched from the model?
+    bool isAdmin = true;
+    // also fetched from the model?
+    string name = "Stephen";
+}
+
+<div class="jumbotron">
+    <p class="text-center">Welcome @name</p>
+</div>
+
+<div class="center-block text-center">
+    <div>
+        @if (isAdmin == true)
+        {
+            @Html.ActionLink("Go to Admin", "Admin", "Admin", null, new { @class = "large" })
+        }
+
+    </div>
+    <div class="margin-top-twenty">
+        @Html.ActionLink("Capture/Edit Preferences", "Preferences", "Preferences", null, new { @class = "large" })
+    </div>
+
+
+</div>
